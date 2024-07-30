@@ -4,8 +4,10 @@ const app = express()
 const mongoose = require('mongoose')
 const MONGO_URI = process.env.MONGO_URI
 const PORT = 3000
+const logger = require('morgan')
 
-
+app.use(express.json())
+app.use(logger('tiny'))
 mongoose.connect(MONGO_URI)
 
 mongoose.connection.once('open', () => {
