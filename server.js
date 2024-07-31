@@ -67,15 +67,23 @@ app.get('/cereals/:id', async (req, res) => {
 
 //UPDATE (Edit)
 app.put('/cereals/:id', async (req, res) => {
+    if (req.body.quickToSoggy === "on") {
+        req.body.quickToSoggy = true
+    }
+    else {
+        req.body.quickToSoggy = false
+    }
     try {
         const updatedCereal = await Cereal.findByIdAndUpdate({ _id: req.params.id }, req.body)
-        res.redirect(`/cereals/`)
+        res.redirect(`/cereals/${req.params.id}`)
     } catch (error) {
         res.status(400).json({ msg: error.message })
     }
 })
 
 app.get('/cereals/:id/edit', async (req, res) => {
+
+
     try {
         const foundUpdatedCereal = await Cereal.findById({ _id: req.params.id })
         res.render('edit.ejs', {
