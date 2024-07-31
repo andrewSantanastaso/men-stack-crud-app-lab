@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Cereal</title>
+</head>
+
+<body>
+    <h1>Add a new cereal!</h1>
+    <form action="/cereals" method="POST">
+        <div>
+            <label for="name">Cereal Name:</label>
+            <input type="text" name="name" id="name" required />
+        </div>
+        <div>
+            <label for="flavor">What's the main flavor?</label>
+            <input type="text" name="flavor" id="flavor" required />
+        </div>
+        <div>
+            <label for="quickToSoggy">Check the box if it gets soggy quickly</label>
+            <input type="checkbox" name="quickToSoggy" id="quickToSoggy">
+            <button type="submit">Add your cereal</button>
+        </div>
+    </form>
+    <a href="/cereals">Back to Cereals</a>
+
+</body>
+
+</html>

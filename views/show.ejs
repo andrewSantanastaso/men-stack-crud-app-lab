@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= cereal.name %>
+    </title>
+</head>
+
+<body>
+    <h1>
+        <%= cereal.name %>
+    </h1>
+    <p>This cereal's flavor is <%=cereal.flavor %>
+    </p>
+    <div>
+        <a href="/cereals/<%= cereal._id %>/edit">Edit <%= cereal.name %></a>
+    </div>
+
+    <form action="/cereals/<%=cereal._id%>?_method=DELETE" method="POST">
+        <button type="submit">
+            Delete <%= cereal.name %>
+        </button>
+    </form>
+    <div>
+        <a href="/cereals">Back to Cereals</a>
+    </div>
+</body>
+
+</html>

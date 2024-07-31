@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cereals Index</title>
+</head>
+
+<body>
+
+    <h1>Cereals</h1>
+    <ul>
+        <% cereals.forEach((cereal)=> { %>
+            <li>
+                <a href="/cereals/<%=cereal._id%>">
+                    <%= cereal.name %>
+                </a>
+            </li>
+            <% }) %>
+    </ul>
+    <a href="/cereals/new">Add a cereal</a>
+</body>
+
+</html>
